@@ -1,5 +1,9 @@
 const express = require('express')
 let path = require('path');
+
+let indexRouter = require('./routes/index')
+
+
 const app = express();
 
 
@@ -11,10 +15,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
+// We add our (previously imported) route-handling code to the request handling chain. The imported code will define particular routes for the different parts of the site
+app.use('/', indexRouter);
 
-app.get('/',(req, res) => {
-  res.send('Hello World!')
-})
+
 
 
 app.listen(3000, () => {
