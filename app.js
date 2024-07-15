@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-// We add our (previously imported) route-handling code to the request handling chain. The imported code will define particular routes for the different parts of the site
+// We add our route-handling code to the request handling chain. This will define particular routes for the different parts of the site
 app.use('/', indexRouter);
 
 
