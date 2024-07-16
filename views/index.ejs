@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <ul><% messagesA.forEach(message => { %>                                      <%# /* iterates over each message object in the messagesA. %>
-
-      <li> <%= message.text %>, <%= message.user %>, <%= message.added %> </li>
-      
-      <% }); %></ul>
-      
-      <a href="/new">Add New Message!</a>
+    <h1 class="title"><%= title %></h1>
+    <div class="container">
+      <div class="message-container">
+        <ul><% messagesA.forEach(message => { %>                                      <%# /* iterates over each message object in the messagesA. %>
+    
+          <div class="message-box">
+            <p><%= message.user %></p>
+            <p><%= message.text %></p>
+            <p><%= message.added %></p>
+            <!-- <li> <%= message.text %>, <%= message.user %>, <%= message.added %> </li> -->
+          </div>
+          
+          <% }); %></ul>
+    
+          <a class="angled-gradient-button" href="/new">Add new message</a>
+      </div>
+    </div>
   </body>
 </html>

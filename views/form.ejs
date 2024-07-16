@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Form</h1>
-    <form method="POST" action="/new">
-      <label for="user">user:</label> <br />
-      <input id="user" type="text" name="messageUser" /> <br />
-
-      <label for="message">message:</label> <br />
-      <input id="message" type="text" name="messageText" /> <br />
-
-      <button type="submit">Add Message</button>
-    </form>
+    <div class="form-container">
+      <form class="form" method="POST" action="/new">
+        <label for="user">user:</label> <br />
+        <input id="user" type="text" name="messageUser" /> <br />
+  
+        <label for="message">message:</label> <br />
+        <input id="message" type="text" name="messageText" /> <br />
+  
+        <button type="submit">Add Message</button>
+        <a href="/">View Messages!</a>
+      </form>
+    </div>
   </body>
 </html>

@@ -16,7 +16,7 @@ const messages = [
 ]
 
 router.get('/', (req, res) => {
-  res.render('index', { title: "Mini Messageboard", messagesA: messages }) // messagesA (red) is a key in the object
+  res.render('index', { title: "Mini Message Board", messagesA: messages }) // messagesA (red) is a key in the object
 })
 
 router.get('/new', (req,res) => {

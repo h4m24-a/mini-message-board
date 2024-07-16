@@ -11,8 +11,10 @@ const app = express();
 app.use(express.json());  // submit raw json
 app.use(express.urlencoded({ extended: false }));  // takes in an object - replicates web form and sends form data.
 
+
+
 // serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));    // 'public' is our static folder.
 
 
 //  There are two parts to setting up the engine. First, we set the 'views' value to specify the folder where the templates will be stored (in this case the subfolder /views). 
