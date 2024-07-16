@@ -55,8 +55,8 @@ a{
 
 .message-box p {
   font-size: 16px;
-  background-color: #354C5D;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 15px 30px;
   font-family: 'Inter', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -99,7 +99,7 @@ p:first-child {
 .form {
   display: flex;
   flex-direction: column;
-  background-color: #354C5D;
+  background-color: white;
   padding: 40px;
   margin-top: 20px;
   border: black;
@@ -107,19 +107,19 @@ p:first-child {
 }
 
 .input-group {
-  background-color: #354C5D;
+  background-color: white;
 }
 
 
 form, input[type="text"] {
   font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 20px;
-  color: white;
+  color: black;
   outline: 0;
   margin-bottom: 30px;
   border-width: 0 0 2px;
-  border-color: white;
-  background-color: #354C5D;
+  border-color: black;
+  background-color: white;
 }
 
 
