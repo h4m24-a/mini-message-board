@@ -23,15 +23,16 @@ router.get('/new', (req,res) => {
   res.render('form',)
 })
 
-router.post('/new', (req,res) => {
-  const messageUser = req.body.messageUser;
-  const messageText = req.body.messageText;
-  messages.push({text: messageText, user: messageUser, added: new Date()});
+router.post('/new', (req,res) => { 
+  const messageUser = req.body.messageUser;  // user: This property is set to the value of the variable messageUser, which contains the identifier of the user who sent the message.
+  const messageText = req.body.messageText; // text: This property is set to the value of the variable messageText, which contains the content of the message.
+  messages.push({text: messageText, user: messageUser, added: new Date()}); // This is the object that is being added to the messages array.
   res.redirect('/')
   console.log('POST Request')
 })
 
 module.exports = router;
+
 
 
 

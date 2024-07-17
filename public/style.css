@@ -170,7 +170,9 @@ input:placeholder-shown { border-color: white; }
   letter-spacing: 2px;
   background-image: linear-gradient(110deg, #34D821 0%, #34D821 50%, transparent 50%, transparent 100%);
   font-size: 14px;
-  margin-top: 30px;
+  max-width: 100%;
+  width: 50%;
+  margin: 30px auto 0;
 }
 
 .angled-gradient-button3:hover {
@@ -203,6 +205,10 @@ input:placeholder-shown { border-color: white; }
   background-image: linear-gradient(110deg, #F43725 0%, #F43725 50%, transparent 50%, transparent 100%);
   font-size: 14px;
   margin-top: 20px;
+  max-width: 100%;
+  width: 50%;
+  text-align: center;
+  margin: 20px auto 0;
 }
 
 .angled-gradient-button2:hover {
@@ -215,3 +221,11 @@ input:placeholder-shown { border-color: white; }
 .angled-gradient-button2:active {
   transform: translateY(-1px);
 }
+
+
+/*
+0 sets the top and bottom margins to 0.
+
+auto sets the left and right margins to auto, which means the browser calculates these margins equally, 
+  centering the element horizontally within its container.
+*/
