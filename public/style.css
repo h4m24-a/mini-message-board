@@ -51,6 +51,8 @@ a{
   margin: 25px;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
+0px 15px 12px 0px rgba(0,0,0,0.22);
 }
 
 .message-box p {
@@ -104,6 +106,8 @@ p:first-child {
   margin-top: 20px;
   border: black;
   border-radius: 8px;
+  box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
+0px 15px 12px 0px rgba(0,0,0,0.22);
 }
 
 .input-group {
@@ -143,7 +147,7 @@ input:focus:valid {
 input:placeholder-shown { border-color: white; }
 
 .form-container {
-  width: 20%;
+  width: 35%;
   margin: 0 auto;
 }
 
