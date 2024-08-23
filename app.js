@@ -1,10 +1,13 @@
-const express = require('express')
+const express = require('express')  //  import express
 let path = require('path');
 
+const app = express();  // The app object conventionally denotes the Express application. Create it by calling the top-level express() function exported by express module.
+
+// Routers
 let indexRouter = require('./routes/index')
+let authorRouter = require('./routes/authorsRouter');
+let serverRouter = require('./routes/serverRouter');
 
-
-const app = express();
 
 
 // Body parser middleware
@@ -21,15 +24,22 @@ app.use(express.static(path.join(__dirname, 'public')));    // 'public' is our s
 //  Then we set the 'view engine' value to specify the template library (in this case "ejs").
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
+
 
 
 // Adding route-handling code to the request handling chain. This will define particular routes for the different parts of the site
 app.use('/', indexRouter);
+app.use('/author', authorRouter);
+app.use('/server', serverRouter);
 
 
 
-
-app.listen(3000, () => {
+app.listen(3000, () => {             // This function is used to start the server and make it listen for incoming connections on a specified port.
   console.log(`Starting the server`)
-})
+}) 
+
+
+
+
+// You can create custom middleware functions by using the app. use() method. 

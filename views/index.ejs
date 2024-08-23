@@ -10,12 +10,13 @@
     <h1 class="title"><%= title %></h1>
     <div class="container">
       <div class="message-container">
-        <ul><% messagesA.forEach(message => { %>                                      <%# /* iterates over each message object in the messagesA. %>
+        <ul><% messagesA.forEach(message => { %>                                      <%# /* iterates over each message object in the messagesA and dispaying each message user, text and date. %>
     
           <div class="message-box">
-            <p><%= message.user %></p>
-            <p><%= message.text %></p>
-            <p><%= message.added %></p>
+            <p><%= message.user %></p>    <%# /* This outputs the user property of the message %>
+            <p><%= message.text %></p>    <%# /* This outputs the text property of the message %>
+            <p><%= message.added %></p>   <%# /* This outputs the date property of the message %>
+
             <!-- <li> <%= message.text %>, <%= message.user %>, <%= message.added %> </li> -->
           </div>
           
