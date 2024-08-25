@@ -5,8 +5,7 @@ const app = express();  // The app object conventionally denotes the Express app
 
 // Routers
 let indexRouter = require('./routes/index')
-let authorRouter = require('./routes/authorsRouter');
-let serverRouter = require('./routes/serverRouter');
+
 
 
 
