@@ -1,5 +1,6 @@
 const express = require('express')  //  import express
 let path = require('path');
+require('dotenv').config()
 
 const app = express();  // The app object conventionally denotes the Express application. Create it by calling the top-level express() function exported by express module.
 
