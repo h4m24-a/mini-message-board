@@ -9,6 +9,7 @@
   <body>
     <h1 class="title"><%= title %></h1>
     <div class="container">
+      <a class="angled-gradient-button" href="/new">Add new message</a>
       <div class="message-container">
         <ul><% messagesA.forEach(message => { %>                                      <%# /* iterates over each message object in the messagesA and dispaying each message user, text and date. %>
     
@@ -22,7 +23,6 @@
           
           <% }); %></ul>
     
-          <a class="angled-gradient-button" href="/new">Add new message</a>
       </div>
     </div>
   </body>
