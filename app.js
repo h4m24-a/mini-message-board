@@ -27,6 +27,7 @@ app.set('view engine', 'ejs')
 
 
 
+
 // Adding route-handling code to the request handling chain. This will define particular routes for the different parts of the site
 app.use('/', indexRouter);
 
