@@ -23,7 +23,7 @@ async function createMessagePost(req, res) {
 
 
 async function deleteMessagePost(req, res) {
-  const messageId = req.body.id;
+  const messageId = req.params.id;
   const id = parseInt(messageId, 10);
   db.deleteMessage(id)
   res.redirect('/')
