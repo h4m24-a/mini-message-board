@@ -23,18 +23,41 @@ async function createMessagePost(req, res) {
 
 
 async function deleteMessagePost(req, res) {
-  const messageId = req.params.id;
-  const id = parseInt(messageId, 10);
-  db.deleteMessage(id)
+  const messageId = req.params.id;      // extracting id from url using params
+  const id = parseInt(messageId, 10);   // converts id of string to integer.
+  await db.deleteMessage(id)
   res.redirect('/')
-  console.log('deleted message')
 }
+
+
+async function updateMessageGet(req, res) {
+  const messageId = req.params.id;
+  const message = await db.selectMessage(messageId);
+
+  res.render('update', {
+    message: message
+  });
+};
+
+
+
+async function updateMessagePost(req, res) {
+  const messageId = req.params.id;
+  const { messageUser, messageText } = req.body;
+
+  await db.updateMessage(messageId, messageUser, messageText);
+  res.redirect('/');
+  console.log('updated message')
+};
+
 
 module.exports = {
   getMessages,
   createMessageGet,
   createMessagePost,
-  deleteMessagePost
+  deleteMessagePost,
+  updateMessagePost,
+  updateMessageGet
 }
 
 

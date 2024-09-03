@@ -26,13 +26,27 @@ async function insertMessage(username, text ) {
 
 
 
-async function deleteMessage(id) {
+async function deleteMessage(id) {                            // deletes a record using the id of the selected message.
  await pool.query("DELETE FROM message WHERE id = $1", [id] );
 }
+
+
+async function updateMessage(id, username, text) {
+  await pool.query("UPDATE message SET username = $1, text = $2 WHERE id = $3",[username, text, id]);
+}
+
+
+async function selectMessage(id) {
+  const result = await pool.query("SELECT * FROM message WHERE id = $1", [id]);
+  return result.rows[0];
+}
+
 
 module.exports = {  // This line exports the functions, making them available for use in other parts of the application.
   getAllMessages,
   insertMessage,
-  deleteMessage
+  deleteMessage,
+  updateMessage,
+  selectMessage
 }
 

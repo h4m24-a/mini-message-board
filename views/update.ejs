@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Form</title>
+</head>
+<body>
+  <form action="/update/<%= message.id %>" method="POST">
+    <label for="username">Username</label>
+    <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
+
+    <label for="message">Message</label>
+    <input id="message" type="text" name="messageText" value="<%= message.text %>" required />
+
+    <button type="submit">Update Message</button>
+  </form>
+  <a href="/">Back to home</a>
+</body>
+</html>

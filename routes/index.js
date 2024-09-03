@@ -11,6 +11,10 @@ router.post('/new', messagesController.createMessagePost); // save submitted mes
 
 router.post('/delete/:id', messagesController.deleteMessagePost);  // delete message
 
+router.get('/update/:id', messagesController.updateMessageGet); // display form to update message
+
+router.post('/update/:id', messagesController.updateMessagePost)  // updates message
+
 
 module.exports = router;
 
