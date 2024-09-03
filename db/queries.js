@@ -21,12 +21,18 @@ This async function fetches all columns from the messages table.
 
 
 async function insertMessage(username, text ) {
-  await pool.query("INSERT INTO message (username, text)  VALUES ($1, $2)", [username, text] )
+  await pool.query("INSERT INTO message (username, text)  VALUES ($1, $2)", [username, text] );
 }
 
 
+
+async function deleteMessage(id) {
+ await pool.query("DELETE FROM message WHERE id = $1", [id] );
+}
+
 module.exports = {  // This line exports the functions, making them available for use in other parts of the application.
   getAllMessages,
-  insertMessage
+  insertMessage,
+  deleteMessage
 }
 

@@ -19,14 +19,22 @@ async function createMessagePost(req, res) {
   const messageText = req.body.messageText; // text: This property is set to the value of the variable messageText, which contains the content of the message.
   await db.insertMessage(messageUser, messageText)
   res.redirect('/')   // redirect back to home page.
-  console.log('POST Request')
 }
 
+
+async function deleteMessagePost(req, res) {
+  const messageId = req.body.id;
+  const id = parseInt(messageId, 10);
+  db.deleteMessage(id)
+  res.redirect('/')
+  console.log('deleted message')
+}
 
 module.exports = {
   getMessages,
   createMessageGet,
-  createMessagePost
+  createMessagePost,
+  deleteMessagePost
 }
 
 

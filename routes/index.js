@@ -9,6 +9,8 @@ router.get('/new', messagesController.createMessageGet); // displays the message
 
 router.post('/new', messagesController.createMessagePost); // save submitted message data
 
+router.post('/delete/:id', messagesController.deleteMessagePost);  // delete message
+
 
 module.exports = router;
 

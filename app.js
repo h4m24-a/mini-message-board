@@ -12,7 +12,7 @@ let indexRouter = require('./routes/index')
 
 // Body parser middleware
 app.use(express.json());  // submit raw json
-app.use(express.urlencoded({ extended: false }));  // takes in an object - replicates web form and sends form data.
+app.use(express.urlencoded({ extended: true }));  // takes in an object - replicates web form and sends form data.
 
 
 
@@ -35,7 +35,7 @@ app.use('/', indexRouter);
 
 
 app.listen(3000, () => {             // This function is used to start the server and make it listen for incoming connections on a specified port.
-  console.log(`Starting the server`)
+  console.log(`Server running on PORT 3000`)
 }) 
 
 
