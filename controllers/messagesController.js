@@ -47,7 +47,6 @@ async function updateMessagePost(req, res) {
 
   await db.updateMessage(messageId, messageUser, messageText);
   res.redirect('/');
-  console.log('updated message')
 };
 
 

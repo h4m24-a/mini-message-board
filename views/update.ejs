@@ -6,15 +6,158 @@
   <title>Update Form</title>
 </head>
 <body>
-  <form action="/update/<%= message.id %>" method="POST">
-    <label for="username">Username</label>
-    <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
-
-    <label for="message">Message</label>
-    <input id="message" type="text" name="messageText" value="<%= message.text %>" required />
-
-    <button type="submit">Update Message</button>
-  </form>
-  <a href="/">Back to home</a>
+  <div class="form-container">
+    <h1 class="title" >Update Form</h1>
+    <form  class="form" action="/update/<%= message.id %>" method="POST">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
+  
+      <label for="message">Message</label>
+      <input id="message" type="text" name="messageText" value="<%= message.text %>" required />
+  
+      <button class="angled-gradient-button3" type="submit">Update Message</button>
+      <a class="angled-gradient-button3" href="/">Back to home</a>
+    </form>
+  </div>
 </body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+  .form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 40px;
+  margin-top: 20px;
+  border: black;
+  border-radius: 8px;
+  box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
+0px 15px 12px 0px rgba(0,0,0,0.22);
+}
+
+.input-group {
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+form, input[type="text"] {
+  font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  color: black;
+  outline: 0;
+  margin-bottom: 30px;
+  border-width: 0 0 2px;
+  border-color: black;
+  background-color: white;
+}
+
+
+form label {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+input:focus:invalid {
+  border-color: red;
+}
+
+input:focus:valid {
+  border-color: green;
+}
+
+
+input:placeholder-shown { border-color: white; }
+
+.form-container {
+  width: 35%;
+  margin: 0 auto;
+}
+
+button {
+  background-size: 220%;
+  box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+  color: #3363ff;
+  background-color: transparent;
+  background-position: 100%;
+  border: 3px solid #3363ff;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: all .2s ease-out;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 2px;
+  background-image: linear-gradient(110deg, #3363ff 0%, #3363ff 50%, transparent 50%, transparent 100%);
+  font-size: 14px;
+  display: block; /* Make sure it's a block-level element */
+  margin: 10px auto; /* Center horizontally */
+  max-width: 50%;
+  text-align: center;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+  background-position: 0;
+  color: #fff;
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+  color: black;
+  font-family: 'Inter', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a {
+  background-size: 220%;
+  box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+  color: #34D821;
+  font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: transparent;
+  background-position: 100%;
+  border: 3px solid #34D821;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: all .2s ease-out;
+  font-weight: 900;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-image: linear-gradient(110deg, #34D821 0%, #34D821 50%, transparent 50%, transparent 100%);
+  font-size: 14px;
+  max-width: 100%;
+  width: 30%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+  background-position: 0;
+  color: #fff;
+}
+
+a:active {
+  transform: translateY(-1px);
+}
+
+
+</style>
 </html>

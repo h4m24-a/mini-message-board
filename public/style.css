@@ -257,5 +257,5 @@ auto sets the left and right margins to auto, which means the browser calculates
 }
 
 .update-form {
-  display: none;
+  background-color: red;
 }
