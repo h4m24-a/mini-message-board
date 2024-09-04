@@ -20,15 +20,12 @@ Mini Message Board using Express.js
 - Implemented data persistence for app using PostgreSQL and the pg library, .
 - Integrated a front-end form using EJS templating to capture user input, sending data via POST requests to the server.
 - Wrote SQL queries to handle CRUD operations (Create, Read, Update, Delete) for managing messages.
-- Users can add, view, read and delete messages.
+- Users can add, view, update and delete messages.
 
 
 
 
 ## Install project dependencies
-
-
-
 ```
   npm install
 ```

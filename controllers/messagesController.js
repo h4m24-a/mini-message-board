@@ -18,10 +18,10 @@ const validateMessage = [
 
 
 
-
+// function to retrieve all messages.
 const getMessages = async (req, res, next) => {
   try {
-    const messages = await db.getAllMessages();   // displays all messages using the db query
+    const messages = await db.getAllMessages();   // displays all messages using the db getallmessages query, which includes a sql query to select all columns.
     res.render('index', {     // res.render defaults status code to 200
       title: "Mini Message Board", 
       messagesA: messages     // messagesA is a key in the object, allows us to use this variable in index.ejs to display each message.
@@ -60,11 +60,12 @@ const createMessagePost = async (req, res, next) => {
   }
 
   try {
-    const messageUser = req.body.messageUser;  // user: This property is set to the value of the variable messageUser, which contains the identifier of the user who sent the message.
-    const messageText = req.body.messageText;  // text: This property is set to the value of the variable messageText, which contains the content of the message.
-    await db.insertMessage(messageUser, messageText);
+    const messageUser = req.body.messageUser;  // getting the value of messageUser and storing in the messageUser variable
+    const messageText = req.body.messageText;  // getting the value of messageText and storing in the messageText variable
+    await db.insertMessage(messageUser, messageText);   // invoking the insert message function and passing in user and text as argugments. insert has two parameters, one for username and one for text.
     res.redirect(302, '/');    // redirects back to homepage
-  } catch (error) {
+
+  } catch (error) {   // handle any errors if there is an error.
     next(error);  // Pass the error to the error-handling middleware
   }
 };
@@ -77,8 +78,8 @@ const deleteMessagePost = async (req, res, next) => {
   try {
     const messageId = req.params.id;      // extracting id from url using params
     const id = parseInt(messageId, 10);   // converts id of string to integer.
-    await db.deleteMessage(id);
-    res.redirect(302, '/');
+    await db.deleteMessage(id);           // invoking the delete message function and passing the id as the argument. Uses await keyword to wait until the function completes before proceeding.
+    res.redirect(302, '/');               // redirecting the user back to home page.
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }

@@ -54,7 +54,7 @@ async function deleteMessage(id) {
 async function updateMessage(id, username, text) {
   try {
     await pool.query("UPDATE message SET username = $1, text = $2 WHERE id = $3",[username, text, id]);
-    
+
   } catch (error) {
     console.log('Error updating message:', error);
     throw error;

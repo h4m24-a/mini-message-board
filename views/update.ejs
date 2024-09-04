@@ -8,7 +8,7 @@
 <body>
   <h1 class="title" >Update Form</h1>
   <div class="form-container">
-    <form class="form action="/update/<%= message.id %>" method="POST">
+    <form class="form" action="/update/<%= message.id %>" method="POST">
       <label class="input-group"  for="username">Username</label>
       <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
   
@@ -63,6 +63,7 @@ a {
   background-color: #ffffff; /* Clean white background */
   border-radius: 12px; /* Larger border radius for a more rounded look */
   padding: 24px; /* Generous padding for a spacious feel */
+  margin: 5px 0 30px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow for depth */
 }
 
