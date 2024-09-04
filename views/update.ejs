@@ -6,13 +6,13 @@
   <title>Update Form</title>
 </head>
 <body>
+  <h1 class="title" >Update Form</h1>
   <div class="form-container">
-    <h1 class="title" >Update Form</h1>
-    <form  class="form" action="/update/<%= message.id %>" method="POST">
-      <label for="username">Username</label>
+    <form class="form action="/update/<%= message.id %>" method="POST">
+      <label class="input-group"  for="username">Username</label>
       <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
   
-      <label for="message">Message</label>
+      <label class="input-group"  for="message">Message</label>
       <input id="message" type="text" name="messageText" value="<%= message.text %>" required />
   
       <button class="angled-gradient-button3" type="submit">Update Message</button>
@@ -21,66 +21,93 @@
   </div>
 </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-  .form {
+a {
+  text-decoration: none;
+}
+
+
+.form {
   display: flex;
   flex-direction: column;
   background-color: white;
   padding: 40px;
-  margin-top: 20px;
+  margin-top: 5px;
   border: black;
   border-radius: 8px;
-  box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
-0px 15px 12px 0px rgba(0,0,0,0.22);
+  box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3), 0px 15px 12px 0px rgba(0,0,0,0.22);
 }
 
+/* Container for form inputs */
 .input-group {
-  background-color: white;
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Larger border radius for a more rounded look */
+  padding: 24px; /* Generous padding for a spacious feel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow for depth */
 }
 
-a{
-  text-decoration: none;
-}
-
+/* Style for the form and text inputs */
 form, input[type="text"] {
-  font-family: 'Roboto', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 20px;
-  color: black;
-  outline: 0;
-  margin-bottom: 30px;
-  border-width: 0 0 2px;
-  border-color: black;
-  background-color: white;
+  font-family: 'Poppins', Arial, sans-serif; /* Modern font stack */
+  font-size: 16px; /* Slightly smaller font size for a sleek look */
+  color: #333; /* Dark gray color for readability */
+  outline: none; /* Custom focus styling */
+  margin-bottom: 16px; /* Reduced margin for a compact layout */
+  border: 1px solid #ddd; /* Light border color for a minimalist design */
+  border-radius: 8px; /* Rounded corners for inputs */
+  background-color: #f9f9f9; /* Light gray background for inputs */
+  padding: 12px; /* Comfortable padding inside inputs */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for focus effects */
 }
 
-
+/* Style for form labels */
 form label {
-  color: black;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
+  color: black; /* Medium gray color for a modern look */
+  font-size: 18px; /* Smaller font size for labels */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: 500; /* Slightly lighter weight for a clean design */
+  display: block; /* Ensures label is on its own line */
 }
 
-
-input:focus:invalid {
-  border-color: red;
+/* Add focus styles for inputs */
+input[type="text"]:focus {
+  border-color: #007bff; /* Bright blue border color on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Subtle glow effect */
 }
 
-input:focus:valid {
-  border-color: green;
+/* Add placeholder styling */
+input[type="text"]::placeholder {
+  color: #aaa; /* Light gray placeholder text for a modern touch */
+  opacity: 1; /* Ensure placeholder is visible */
 }
 
-
-input:placeholder-shown { border-color: white; }
 
 .form-container {
-  width: 35%;
+  width: 30%;
   margin: 0 auto;
 }
+
+
 
 button {
   background-size: 220%;

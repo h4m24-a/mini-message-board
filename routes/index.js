@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const messagesController = require('../controllers/messagesController');
-const validateMessage = require('../controllers/messagesController')
+
 
 router.get('/', messagesController.getMessages);  // displays all messages
 
 router.get('/new', messagesController.createMessageGet); // displays the message form
 
-router.post('/new', validateMessage, messagesController.createMessagePost);
+router.post('/new', messagesController.createMessagePost); // save submitted message data
 
 router.post('/delete/:id', messagesController.deleteMessagePost);  // delete message
 

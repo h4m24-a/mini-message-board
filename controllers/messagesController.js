@@ -22,7 +22,7 @@ const validateMessage = [
 const getMessages = async (req, res, next) => {
   try {
     const messages = await db.getAllMessages();   // displays all messages using the db query
-    res.render('index', { 
+    res.render('index', {     // res.render defaults status code to 200
       title: "Mini Message Board", 
       messagesA: messages     // messagesA is a key in the object, allows us to use this variable in index.ejs to display each message.
     });
@@ -63,7 +63,7 @@ const createMessagePost = async (req, res, next) => {
     const messageUser = req.body.messageUser;  // user: This property is set to the value of the variable messageUser, which contains the identifier of the user who sent the message.
     const messageText = req.body.messageText;  // text: This property is set to the value of the variable messageText, which contains the content of the message.
     await db.insertMessage(messageUser, messageText);
-    res.redirect('/');    // redirects back to homepage
+    res.redirect(303, '/');    // redirects back to homepage
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
@@ -78,7 +78,7 @@ const deleteMessagePost = async (req, res, next) => {
     const messageId = req.params.id;      // extracting id from url using params
     const id = parseInt(messageId, 10);   // converts id of string to integer.
     await db.deleteMessage(id);
-    res.redirect('/');
+    res.redirect(303, '/');
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
@@ -90,8 +90,9 @@ const deleteMessagePost = async (req, res, next) => {
 // function to render the update message form
 const updateMessageGet = async (req, res, next) => {
   try {
-    const messageId = req.params.id;            // get id from router parameter
-    const message = await db.selectMessage(messageId);  // calls selectMessage db query
+    const messageId = req.params.id;      // extracting id from url using params
+    const id = parseInt(messageId, 10);            // string to integer
+    const message = await db.selectMessage(id);  // calls selectMessage db query
 
     res.render('update', {    // renders update form
       message: message        // passing the message as a variable to have access to it in the update form
@@ -107,11 +108,12 @@ const updateMessageGet = async (req, res, next) => {
 // function to update a message
 const updateMessagePost = async (req, res, next) => {
   try {
-    const messageId = req.params.id;      // get id from router
+    const messageId = req.params.id;      // extracting id from url using params
+    const id = parseInt(messageId, 10);            // string to integer
     const { messageUser, messageText } = req.body;    // get username and text from the body of request
 
-    await db.updateMessage(messageId, messageUser, messageText);    // call updateMessage to update the message with the text in the username and text using their id
-    res.redirect('/');
+    await db.updateMessage(id, messageUser, messageText);    // call updateMessage to update the message with the text in the username and text using their id
+    res.redirect(303, '/');
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
