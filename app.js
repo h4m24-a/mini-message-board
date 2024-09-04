@@ -50,6 +50,5 @@ app.listen(3000, () => {             // This function is used to start the serve
 }) 
 
 
-//*TODO: try and catch blocks for errors or async handler package or error middleware, documentation, design.
 
 // You can create custom middleware functions by using the app. use() method. 

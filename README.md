@@ -15,7 +15,12 @@ Mini Message Board using Express.js
 
 
 ## Features
-
+- Dynamically displayed messages on the home page by rendering data from the database, displaying username,
+ message text, and timestamp.
+- Implemented data persistence for app using PostgreSQL and the pg library, .
+- Integrated a front-end form using EJS templating to capture user input, sending data via POST requests to the server.
+- Wrote SQL queries to handle CRUD operations (Create, Read, Update, Delete) for managing messages.
+- Users can add, view, read and delete messages.
 
 
 

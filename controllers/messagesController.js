@@ -1,6 +1,8 @@
 const db = require('../db/queries');
 const { body, validationResult } = require('express-validator');
 
+
+
 // Validation and Sanitization
 const textErr = 'Text must be no more than 200 characters long'
 
@@ -13,6 +15,8 @@ const validateMessage = [
     .withMessage(textErr)
     .isString()
 ];
+
+
 
 
 const getMessages = async (req, res, next) => {
@@ -29,7 +33,8 @@ const getMessages = async (req, res, next) => {
 
 
 
-// Controller function to render  form
+
+// function to render  form
 const createMessageGet = async (req, res, next) => {
   try {
     res.render('form');
@@ -40,7 +45,8 @@ const createMessageGet = async (req, res, next) => {
 
 
 
-// Controller function to create a new message
+
+// function to create a new message
 const createMessagePost = async (req, res, next) => {  
 
    // Manually running validation middleware
@@ -65,7 +71,8 @@ const createMessagePost = async (req, res, next) => {
 
 
 
-// Controller function to delete a message
+
+// function to delete a message
 const deleteMessagePost = async (req, res, next) => {
   try {
     const messageId = req.params.id;      // extracting id from url using params
@@ -79,7 +86,8 @@ const deleteMessagePost = async (req, res, next) => {
 
 
 
-// Controller function to render the update message form
+
+// function to render the update message form
 const updateMessageGet = async (req, res, next) => {
   try {
     const messageId = req.params.id;            // get id from router parameter
@@ -95,7 +103,8 @@ const updateMessageGet = async (req, res, next) => {
 
 
 
-// Controller function to update a message
+
+// function to update a message
 const updateMessagePost = async (req, res, next) => {
   try {
     const messageId = req.params.id;      // get id from router
@@ -132,6 +141,6 @@ module.exports = {
 messageUser is the name attribute of the input form for username
 messageUser is the name attribute of the input form for text.
 
-Using their attribute allows us to retrieve the value when the post request is made.
+Using their name attribute from form allows us to retrieve the value when the post request is made.
 
 */
