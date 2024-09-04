@@ -1,6 +1,8 @@
 const express = require('express')  //  import express
 let path = require('path');
-require('dotenv').config()
+const errorHandler = require('./middleware/error')
+const notFound = require('./middleware/notFound');
+require('dotenv').config();
 
 const app = express();  // The app object conventionally denotes the Express application. Create it by calling the top-level express() function exported by express module.
 
@@ -31,6 +33,15 @@ app.set('view engine', 'ejs')
 
 // Adding route-handling code to the request handling chain. This will define particular routes for the different parts of the site
 app.use('/', indexRouter);
+
+
+
+// Catch all errors - on routes/endpoints that don't exist.
+app.use(notFound);
+
+
+// Error handler - order in which functions declare matter - errorhandler is below  the routes
+app.use(errorHandler);
 
 
 

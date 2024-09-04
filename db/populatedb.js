@@ -7,8 +7,8 @@ const { Client } = require("pg"); //  used to interact with the PostgreSQL datab
 const SQL = `
 CREATE TABLE IF NOT EXISTS message (
     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    text VARCHAR,
-    username VARCHAR(255),
+    text VARCHAR(200),
+    username VARCHAR,
     added TIMESTAMPTZ DEFAULT NOW()
 );
 
