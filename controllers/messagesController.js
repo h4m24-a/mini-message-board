@@ -63,7 +63,7 @@ const createMessagePost = async (req, res, next) => {
     const messageUser = req.body.messageUser;  // user: This property is set to the value of the variable messageUser, which contains the identifier of the user who sent the message.
     const messageText = req.body.messageText;  // text: This property is set to the value of the variable messageText, which contains the content of the message.
     await db.insertMessage(messageUser, messageText);
-    res.redirect(303, '/');    // redirects back to homepage
+    res.redirect(302, '/');    // redirects back to homepage
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
@@ -78,7 +78,7 @@ const deleteMessagePost = async (req, res, next) => {
     const messageId = req.params.id;      // extracting id from url using params
     const id = parseInt(messageId, 10);   // converts id of string to integer.
     await db.deleteMessage(id);
-    res.redirect(303, '/');
+    res.redirect(302, '/');
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
@@ -113,7 +113,7 @@ const updateMessagePost = async (req, res, next) => {
     const { messageUser, messageText } = req.body;    // get username and text from the body of request
 
     await db.updateMessage(id, messageUser, messageText);    // call updateMessage to update the message with the text in the username and text using their id
-    res.redirect(303, '/');
+    res.redirect(302, '/');
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
