@@ -34,10 +34,10 @@ const getMessages = async (req, res, next) => {
 
 
 
-// function to render  form
+// function to render form
 const createMessageGet = async (req, res, next) => {
   try {
-    res.render('form');
+    res.render('form');     // renders form.ejs when the GET route for /new is hit
   } catch (error) {
     next(error);  // Pass the error to the error-handling middleware
   }
@@ -88,7 +88,7 @@ const deleteMessagePost = async (req, res, next) => {
 
 
 
-// function to render the update message form
+// function to render the update message form for the selected message using its id.
 const updateMessageGet = async (req, res, next) => {
   try {
     const messageId = req.params.id;      // extracting id from url using params
