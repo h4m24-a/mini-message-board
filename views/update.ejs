@@ -187,5 +187,40 @@ a:active {
 }
 
 
+@media (max-width: 1200px) {
+  .form-container {
+    width: 50%; /* Adjust width for screens 1200px or smaller */
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 70%; /* Adjust for tablet-sized screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%; /* Adjust for mobile devices */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  form label {
+    font-size: 16px; /* Slightly smaller labels on mobile */
+  }
+
+  input[type="text"], input[type="submit"] {
+    font-size: 14px; /* Smaller font for inputs on mobile */
+    padding: 10px; /* Reduce padding for better fit */
+  }
+
+  button, a {
+  font-size: 14px;
+  text-align: center;
+}
+}
+
+
+
 </style>
 </html>

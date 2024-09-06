@@ -301,3 +301,67 @@ auto sets the left and right margins to auto, which means the browser calculates
  align-items: center;
  overflow: hidden;
 }
+
+
+
+
+@media (max-width: 1200px) {
+  .form-container {
+    width: 50%; /* Adjust width for screens 1200px or smaller */
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 70%; /* Adjust for tablet-sized screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%; /* Adjust for mobile devices */
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  form label {
+    font-size: 16px; /* Slightly smaller labels on mobile */
+  }
+
+  input[type="text"], input[type="submit"] {
+    font-size: 14px; /* Smaller font for inputs on mobile */
+    padding: 10px; /* Reduce padding for better fit */
+  }
+}
+
+@media (max-width: 368px) {
+
+.form-buttons {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: center;
+  
+  }
+  .update-btn {
+    display: flex;
+    margin-top: 4px;
+    padding: 12.5px;
+  }
+
+  .delete-btn {
+    display: flex;
+  }
+
+  form label {
+    font-size: 12px; /* Slightly smaller labels on mobile */
+  }
+
+
+  .angled-gradient-button2, .angled-gradient-button3 {
+    font-size: 4px;
+    text-align: center;
+  }
+
+}
