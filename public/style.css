@@ -360,7 +360,7 @@ auto sets the left and right margins to auto, which means the browser calculates
 
 
   .angled-gradient-button2, .angled-gradient-button3 {
-    font-size: 4px;
+    font-size: 10px;
     text-align: center;
   }
 
