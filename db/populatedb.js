@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-
+require('dotenv').config();
 const { Client } = require("pg"); //  used to interact with the PostgreSQL database.
 
 
