@@ -104,6 +104,12 @@ const updateMessageGet = async (req, res, next) => {
 };
 
 
+/*
+Key: message is the name of the property you’re passing to the template.
+Value: message is the variable containing the actual message data.
+*/
+
+
 
 
 // function to update a message
