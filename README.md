@@ -1,6 +1,4 @@
 # mini-message-board
-Mini Message Board using Express.js
-
 
 
 ### View Project : https://mini-message-board-2f8f.onrender.com/
