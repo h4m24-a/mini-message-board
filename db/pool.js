@@ -9,7 +9,7 @@ module.exports = new Pool({
   password: process.env.PASSWORD,
   port: process.env.PORT,
   internal_url: process.env.INTERNAL_URL, 
-  ssl: {
-    rejectUnauthorized: false,
-  }
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // }
 });

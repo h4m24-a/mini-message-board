@@ -10,10 +10,10 @@
   <div class="form-container">
     <form class="form" action="/update/<%= message.id %>" method="POST">
       <label class="input-group"  for="username">Username</label>
-      <input id="username" type="text" name="messageUser" value="<%= message.username %>" required />
+      <input id="username" type="text" name="messageUser"  value="<%= message.username %>" maxlength="20" required />
   
       <label class="input-group"  for="message">Message</label>
-      <input id="message" type="text" name="messageText" value="<%= message.text %>" required />
+      <input id="message" type="text" name="messageText" value="<%= message.text %>" maxlength="150" required />
   
       <button class="angled-gradient-button3" type="submit">Update Message</button>
       <a class="angled-gradient-button3" href="/">Back to home</a>
