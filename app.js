@@ -2,7 +2,7 @@ const express = require('express')  //  import express
 let path = require('path');
 const errorHandler = require('./middleware/error')
 const notFound = require('./middleware/notFound');
-const { Client } = require("pg"); //  used to interact with the PostgreSQL database.
+const PORT = process.env.PORT || 3000
 require('dotenv').config();
 
 const app = express();  // The app object conventionally denotes the Express application. Create it by calling the top-level express() function exported by express module.
@@ -47,8 +47,8 @@ app.use(errorHandler);
 
 
 
-app.listen(3000, () => {             // This function is used to start the server and make it listen for incoming connections on a specified port.
-  console.log(`Server running on PORT 3000`)
+app.listen(PORT, () => {             // This function is used to start the server and make it listen for incoming connections on a specified port.
+  console.log(`Server running on PORT ${PORT}`)
 }) 
 
 
