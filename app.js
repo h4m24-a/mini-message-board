@@ -11,18 +11,7 @@ const app = express();  // The app object conventionally denotes the Express app
 let indexRouter = require('./routes/index')
 
 
-async function main() {         // async function
-  console.log('seeding...');    // logs seeding to console to indicate start of seeding process
-  const client = new Client({   // A new instance of Client is created.
-    connectionString: process.env.EXTERNAL_URL  // connectionString specifies the database connection details
-  });
-  await client.connect();   //  establishes a connection to the PostgreSQL database using the client.
-  await client.query(SQL);  //  Executes the SQL commands defined in the SQL string.
-  await client.end();       // This closes the connection to the database.
-  console.log("done");      // logs done to console to indicate end of seeding process.
-}
 
-main();
 
 
 // Body parser middleware
