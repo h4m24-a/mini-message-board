@@ -3,16 +3,16 @@ const { Pool } = require('pg');
 
 
 module.exports = new Pool({ 
-  DATABASE_PUBLIC_URL:process.env.DATABASE_PUBLIC_URL,
-  DATABASE_URL:process.env.DATABASE_URL,
-  PGDATA:process.env.PGDATA,
-  PGDATABASE:process.env.PGDATABASE,
-  PGHOST:process.env.PGHOST,
-  PGPASSWORD:process.env.PGPASSWORD,
-  PGPORT:process.env.PGPORT,
-  PGUSER:process.env.PGUSER,
-  POSTGRES_DB:process.env.POSTGRES_DB,
-  POSTGRES_PASSWORD:process.env.POSTGRES_PASSWORD,
-  POSTGRES_USER:process.env.POSTGRES_USER,
-  SSL_CERT_DAYS:process.env.SSL_CERT_DAYS
+  database_public_url:process.env.DATABASE_PUBLIC_URL,
+  database_url:process.env.DATABASE_URL,
+  pgdata:process.env.PGDATA,
+  pgdatabase:process.env.PGDATABASE,
+  pghost:process.env.PGHOST,
+  pgpassword:process.env.PGPASSWORD,
+  pgport:process.env.PGPORT,
+  pguser:process.env.PGUSER,
+  postgres_db:process.env.POSTGRES_DB,
+  postgres_password:process.env.POSTGRES_PASSWORD,
+  postgres_user:process.env.POSTGRES_USER,
+  ssl_cert_days:process.env.SSL_CERT_DAYS,  
 });
