@@ -331,17 +331,28 @@ auto sets the left and right margins to auto, which means the browser calculates
     font-size: 14px; /* Smaller font for inputs on mobile */
     padding: 10px; /* Reduce padding for better fit */
   }
+
+  .form-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .message-box {
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 368px) {
 
 .form-buttons {
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
   justify-content: center;
+  justify-items: center;
   
   }
   .update-btn {
